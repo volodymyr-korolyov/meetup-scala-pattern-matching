@@ -24,7 +24,7 @@ public class ValueJava {
     public String intToStringMulti(int value) {
         // Number to string
         switch (value) {
-            case 1:  return "One";
+            case 1: return "One";
             case 2: return "Two";
             case 3:
             case 4:

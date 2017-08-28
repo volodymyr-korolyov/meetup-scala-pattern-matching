@@ -29,8 +29,8 @@ object ValueScala extends App {
   def anyToString(value: Any) = {
     // Any to string
     value match {
-      case false => "Zero"
-      case 1 => "One"
+      case false  => "Zero"
+      case 1      => "One"
       case "Many" => "Infinity"
     }
   }
