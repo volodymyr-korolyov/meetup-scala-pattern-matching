@@ -26,6 +26,16 @@ object ExtractorCollectionScala extends App {
     def ===(testValue: String) = assert(value == testValue)
   }
 
+  assert(calc(List(2, 3, "+")) == 5)
+
+  def calc(input: List[Any], stack: List[Int] = Nil): Int = {
+    (input, stack) match {
+      case (Nil, arg :: Nil) => arg
+      case ((num: Int) :: inputTail, _) => calc(inputTail, num :: stack)
+      case ("+" :: inTail, n1 :: n2 :: args) => calc(inTail, (n1 + n2) :: args)
+    }
+  }
+
   applyOp("not", List(true, true)) === List(false, true)
   applyOp("and", List(true, true)) === List(true)
 
